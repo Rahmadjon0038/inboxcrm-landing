@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#0f172a; }
+  a { color:#a5b4fc; text-decoration:none; }
+  a:hover { color:#c7d2fe; }
+  @keyframes ic-pulse { 0%,100% { opacity:.35; transform:scale(1) } 50% { opacity:1; transform:scale(1.15) } }
+  @keyframes ic-float { 0%,100% { transform:translateY(0) } 50% { transform:translateY(-8px) } }
+  html { scroll-behavior:smooth; }
+</style>
+</helmet>
+<div style="box-sizing:border-box;background:#0f172a;color:#e8eefb;font-family:'Plus Jakarta Sans',Helvetica,sans-serif;overflow-x:hidden">
+
+  <!-- NAV -->
+  <div style="position:sticky;top:0;z-index:50;backdrop-filter:blur(18px);background:rgba(15,23,42,.72);border-bottom:1px solid rgba(148,163,184,.14)">
+    <div style="box-sizing:border-box;max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:20px">
+      <a href="#top" style="display:flex;align-items:center;gap:11px;flex:none">
+        <img src="logo/inboxcrm-mark.svg" alt="InboxCRM" style="height:34px;display:block">
+        <span style="font-size:19px;font-weight:800;letter-spacing:-.03em;color:#eef3fa">Inbox<span style="color:#8b9bff">CRM</span></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#c4b5fd;border:1px solid rgba(167,139,250,.45);background:rgba(139,92,246,.14);padding:3px 6px;border-radius:5px">AI</span>
+      </a>
+      <div style="flex:1"></div>
+      <div style="display:flex;align-items:center;gap:26px">
+        <a href="#xizmatlar" style="font-size:14px;font-weight:500;color:#b6c2d6" style-hover="color:#fff">Xizmatlar</a>
+        <a href="#imkoniyatlar" style="font-size:14px;font-weight:500;color:#b6c2d6" style-hover="color:#fff">Imkoniyatlar</a>
+        <a href="#tariflar" style="font-size:14px;font-weight:500;color:#b6c2d6" style-hover="color:#fff">Tariflar</a>
+        <a href="#aloqa" style="font-size:14px;font-weight:500;color:#b6c2d6" style-hover="color:#fff">Aloqa</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;margin-left:12px">
+        <a href="https://app.inboxcrm.uz" style="font-size:14px;font-weight:600;color:#d7e0f0;border:1px solid rgba(148,163,184,.28);padding:9px 16px;border-radius:10px" style-hover="background:rgba(148,163,184,.12);color:#fff">Kirish</a>
+        <a href="https://app.inboxcrm.uz" style="font-size:14px;font-weight:700;color:#fff;background:linear-gradient(120deg,#8b5cf6,#4f6bf6 55%,#2f7ff0);padding:10px 18px;border-radius:10px;box-shadow:0 12px 28px -12px rgba(99,102,241,.9)" style-hover="filter:brightness(1.1)">Sinab ko‘rish</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div id="top" style="box-sizing:border-box;position:relative;max-width:1200px;margin:0 auto;padding:84px 24px 40px;display:flex;flex-direction:column;align-items:center;gap:28px;text-align:center">
+    <div style="position:absolute;top:-120px;left:50%;width:820px;height:520px;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 50%,rgba(124,92,246,.28),rgba(15,23,42,0) 70%);pointer-events:none"></div>
+    <div style="position:relative;font-size:13px;font-weight:600;color:#ddd6fe;border:1px solid rgba(167,139,250,.35);background:rgba(139,92,246,.12);padding:8px 15px;border-radius:99px">✨ AI va Meta Webhook bilan integratsiya qilingan</div>
+    <h1 style="position:relative;margin:0;max-width:900px;font-size:clamp(34px,5.2vw,62px);line-height:1.06;font-weight:800;letter-spacing:-.035em;text-wrap:pretty">Instagram Direct va Izohlarni <span style="background:linear-gradient(100deg,#c4b5fd,#8b9bff 45%,#5eb0ff);-webkit-background-clip:text;background-clip:text;color:transparent">AI bilan avtomatlashtiring</span></h1>
+    <p style="position:relative;margin:0;max-width:720px;font-size:clamp(15px,1.6vw,19px);line-height:1.62;color:#a9b6cd;text-wrap:pretty">Mijozlar savollariga 24/7 tezkor javob bering, sun’iy intellekt orqali qiziqqan lidlarni aniqlang va to‘g‘ridan-to‘g‘ri Telegram sotuv kanalingizga yuboring.</p>
+    <div style="position:relative;display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+      <a href="https://app.inboxcrm.uz" style="font-size:15px;font-weight:700;color:#fff;background:linear-gradient(120deg,#8b5cf6,#4f6bf6 55%,#2f7ff0);padding:15px 26px;border-radius:12px;box-shadow:0 18px 40px -16px rgba(99,102,241,.95)" style-hover="filter:brightness(1.1);transform:translateY(-1px)">Tizimni bepul boshlash</a>
+      <a href="#imkoniyatlar" style="font-size:15px;font-weight:600;color:#dbe4f3;border:1px solid rgba(148,163,184,.3);padding:15px 24px;border-radius:12px" style-hover="background:rgba(148,163,184,.1);color:#fff">Demoni ko‘rish</a>
+    </div>
+    <div style="position:relative;display:flex;flex-wrap:wrap;gap:20px;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;color:#8fa0b8;margin-top:4px">
+      <span>Meta Graph API</span><span>·</span><span>Telegram webhook</span><span>·</span><span>O‘zbek tilida AI</span>
+    </div>
+  </div>
+
+  <!-- HERO DASHBOARD -->
+  <div style="box-sizing:border-box;max-width:1200px;margin:0 auto;padding:16px 24px 96px">
+    <div style="border:1px solid rgba(148,163,184,.18);background:linear-gradient(180deg,rgba(30,41,59,.85),rgba(17,24,39,.75));border-radius:22px;padding:14px;box-shadow:0 50px 120px -50px rgba(79,107,246,.75);backdrop-filter:blur(10px)">
+      <div style="display:flex;align-items:center;gap:10px;padding:6px 8px 14px">
+        <div style="width:9px;height:9px;border-radius:99px;background:#f87171"></div>
+        <div style="width:9px;height:9px;border-radius:99px;background:#fbbf24"></div>
+        <div style="width:9px;height:9px;border-radius:99px;background:#34d399"></div>
+        <div style="flex:1"></div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#94a3b8">app.inboxcrm.uz / boshqaruv paneli</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">
+
+        <!-- kolonka 1: instagram suhbat -->
+        <div style="background:rgba(15,23,42,.7);border:1px solid rgba(148,163,184,.16);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:14px;min-width:0">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+            <div style="font-size:13px;font-weight:700;color:#e8eefb">Instagram Direct</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#fca5a5;background:rgba(248,113,113,.12);border:1px solid rgba(248,113,113,.3);padding:3px 7px;border-radius:5px">3 yangi</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;gap:10px;align-items:flex-start">
+              <div style="width:30px;height:30px;flex:none;border-radius:99px;background:linear-gradient(140deg,#f472b6,#a855f7)"></div>
+              <div style="min-width:0;background:rgba(148,163,184,.14);border-radius:12px 12px 12px 4px;padding:10px 12px">
+                <div style="font-size:12px;font-weight:600;color:#cbd5e1;margin-bottom:3px">@nilufar_x</div>
+                <div style="font-size:13px;line-height:1.45;color:#e8eefb">Salom! Ingliz tili kursi narxi qancha?</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:10px;align-items:flex-start">
+              <div style="width:30px;height:30px;flex:none;border-radius:99px;background:linear-gradient(140deg,#38bdf8,#6366f1)"></div>
+              <div style="min-width:0;background:rgba(148,163,184,.14);border-radius:12px 12px 12px 4px;padding:10px 12px">
+                <div style="font-size:12px;font-weight:600;color:#cbd5e1;margin-bottom:3px">Izoh · @sardor.d</div>
+                <div style="font-size:13px;line-height:1.45;color:#e8eefb">Manzilingiz qayerda? 🙌</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:auto;display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8fa0b8">
+            <div style="width:7px;height:7px;border-radius:99px;background:#34d399;animation:ic-pulse 1.8s ease-in-out infinite"></div>
+            Webhook faol
+          </div>
+        </div>
+
+        <!-- kolonka 2: AI javob -->
+        <div style="background:linear-gradient(180deg,rgba(76,54,140,.35),rgba(15,23,42,.7));border:1px solid rgba(167,139,250,.3);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:14px;min-width:0">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+            <div style="font-size:13px;font-weight:700;color:#e8eefb">AI Agent javobi</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#ddd6fe;background:rgba(139,92,246,.18);border:1px solid rgba(167,139,250,.4);padding:3px 7px;border-radius:5px">1.2s</div>
+          </div>
+          <div style="background:linear-gradient(130deg,#7c5cf6,#3f7ff0);border-radius:12px 12px 4px 12px;padding:12px 14px;font-size:13px;line-height:1.5;color:#fff;box-shadow:0 16px 30px -16px rgba(99,102,241,.9)">Salom, Nilufar! Ingliz tili kursi oyiga 450 000 so‘m, haftada 3 kun. Markazimiz To‘raqo‘rg‘on markazida. Sinov darsiga yozib qo‘yaymi?</div>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#9aa7bd;text-transform:uppercase">Bilim bazasi</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <span style="font-size:11px;color:#cbd5e1;background:rgba(148,163,184,.14);border-radius:6px;padding:4px 8px">Narxlar</span>
+              <span style="font-size:11px;color:#cbd5e1;background:rgba(148,163,184,.14);border-radius:6px;padding:4px 8px">Kurslar</span>
+              <span style="font-size:11px;color:#cbd5e1;background:rgba(148,163,184,.14);border-radius:6px;padding:4px 8px">Manzil</span>
+              <span style="font-size:11px;color:#cbd5e1;background:rgba(148,163,184,.14);border-radius:6px;padding:4px 8px">Jadval</span>
+            </div>
+          </div>
+          <div style="margin-top:auto;display:flex;gap:8px">
+            <div style="flex:1;text-align:center;font-size:12px;font-weight:600;color:#e8eefb;border:1px solid rgba(148,163,184,.28);border-radius:9px;padding:9px" style-hover="background:rgba(148,163,184,.12)">Admin oladi</div>
+            <div style="flex:1;text-align:center;font-size:12px;font-weight:700;color:#0f172a;background:#c9d4ff;border-radius:9px;padding:9px" style-hover="background:#fff">Yuborish</div>
+          </div>
+        </div>
+
+        <!-- kolonka 3: lid -> telegram -->
+        <div style="background:rgba(15,23,42,.7);border:1px solid rgba(148,163,184,.16);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:14px;min-width:0">
+          <div style="font-size:13px;font-weight:700;color:#e8eefb">Lid kartasi</div>
+          <div style="border:1px solid rgba(94,176,255,.35);background:rgba(47,127,240,.1);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px;animation:ic-float 4.5s ease-in-out infinite">
+            <div style="display:flex;align-items:center;gap:10px">
+              <div style="width:32px;height:32px;flex:none;border-radius:99px;background:linear-gradient(140deg,#f472b6,#a855f7)"></div>
+              <div style="min-width:0">
+                <div style="font-size:13px;font-weight:700;color:#e8eefb">Nilufar X.</div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8fa0b8">instagram · direct</div>
+              </div>
+              <div style="flex:1"></div>
+              <div style="font-size:11px;font-weight:700;color:#fde68a;background:rgba(251,191,36,.14);border:1px solid rgba(251,191,36,.35);padding:4px 8px;border-radius:6px">Qiziqqan</div>
+            </div>
+            <div style="font-size:12px;line-height:1.5;color:#b6c2d6">Ingliz tili · sinov darsiga tayyor · tel: +998 90 ***</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding-left:6px">
+            <div style="width:1px;height:26px;background:linear-gradient(#5eb0ff,rgba(94,176,255,0))"></div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8fa0b8">avto-uzatish</div>
+          </div>
+          <div style="border:1px solid rgba(52,211,153,.3);background:rgba(16,185,129,.08);border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px">
+            <div style="width:34px;height:34px;flex:none;border-radius:11px;background:linear-gradient(140deg,#38bdf8,#0ea5e9)"></div>
+            <div style="min-width:0">
+              <div style="font-size:13px;font-weight:700;color:#e8eefb">Telegram Sotuv Kanali</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#6ee7b7">yuborildi · hozir</div>
+            </div>
+          </div>
+          <div style="margin-top:auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+            <div style="text-align:center;background:rgba(148,163,184,.1);border-radius:10px;padding:9px 4px"><div style="font-size:16px;font-weight:800;color:#e8eefb">128</div><div style="font-size:10px;color:#8fa0b8">Yangi</div></div>
+            <div style="text-align:center;background:rgba(148,163,184,.1);border-radius:10px;padding:9px 4px"><div style="font-size:16px;font-weight:800;color:#fde68a">41</div><div style="font-size:10px;color:#8fa0b8">Qiziqqan</div></div>
+            <div style="text-align:center;background:rgba(148,163,184,.1);border-radius:10px;padding:9px 4px"><div style="font-size:16px;font-weight:800;color:#6ee7b7">33</div><div style="font-size:10px;color:#8fa0b8">Hal bo‘lgan</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div id="xizmatlar" style="box-sizing:border-box;max-width:1200px;margin:0 auto;padding:0 24px 100px;display:flex;flex-direction:column;gap:40px">
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:760px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a5b4fc">Xizmatlar</div>
+      <h2 style="margin:0;font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.14">Bir marta sozlang — mijoz hech qachon javobsiz qolmaydi</h2>
+      <p style="margin:0;font-size:16px;line-height:1.6;color:#a9b6cd;text-wrap:pretty">InboxCRM Instagram sahifangizni AI sotuv agentiga aylantiradi: yozishmalar, izohlar, lidlar va Telegram xabarnomalari — yagona tizimda.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px">
+      <div style="background:linear-gradient(180deg,rgba(30,41,59,.72),rgba(17,24,39,.6));border:1px solid rgba(148,163,184,.16);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:.25s" style-hover="border-color:rgba(139,155,255,.5);transform:translateY(-4px);box-shadow:0 30px 60px -34px rgba(99,102,241,.85)">
+        <div style="width:44px;height:44px;border-radius:13px;background:linear-gradient(140deg,#8b5cf6,#4f6bf6);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;padding:0 11px;box-sizing:border-box">
+          <div style="height:4px;width:100%;border-radius:99px;background:#fff"></div>
+          <div style="height:4px;width:100%;border-radius:99px;background:rgba(255,255,255,.75)"></div>
+          <div style="height:4px;width:60%;border-radius:99px;background:rgba(255,255,255,.55);align-self:flex-start"></div>
+        </div>
+        <div style="font-size:18px;font-weight:700;letter-spacing:-.02em">Yagona Xabarlar Oynasi</div>
+        <p style="margin:0;font-size:14px;line-height:1.6;color:#a9b6cd;text-wrap:pretty">Instagram Direct va Izohlar bir joyda. Barcha yozishmalarni yagona boshqaruv panelidan kuzating va hech bir mijozni javobsiz qoldirmang.</p>
+      </div>
+      <div style="background:linear-gradient(180deg,rgba(30,41,59,.72),rgba(17,24,39,.6));border:1px solid rgba(148,163,184,.16);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:.25s" style-hover="border-color:rgba(139,155,255,.5);transform:translateY(-4px);box-shadow:0 30px 60px -34px rgba(99,102,241,.85)">
+        <div style="width:44px;height:44px;border-radius:13px;background:linear-gradient(140deg,#a855f7,#6366f1);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;color:#fff">AI</div>
+        <div style="font-size:18px;font-weight:700;letter-spacing:-.02em">AI Avto-Javob va Izohlar</div>
+        <p style="margin:0;font-size:14px;line-height:1.6;color:#a9b6cd;text-wrap:pretty">Mijozlar izohlari va Direct xabarlariga bilimlaringiz (narxlar, kurslar, manzil) asosida 24/7 avtomatik, samimiy va aniq javob berish.</p>
+      </div>
+      <div style="background:linear-gradient(180deg,rgba(30,41,59,.72),rgba(17,24,39,.6));border:1px solid rgba(148,163,184,.16);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:.25s" style-hover="border-color:rgba(139,155,255,.5);transform:translateY(-4px);box-shadow:0 30px 60px -34px rgba(99,102,241,.85)">
+        <div style="width:44px;height:44px;border-radius:13px;background:linear-gradient(140deg,#38bdf8,#2f7ff0);display:flex;align-items:center;justify-content:center;gap:4px">
+          <div style="width:8px;height:8px;border-radius:99px;background:#fff"></div>
+          <div style="width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.7)"></div>
+          <div style="width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.45)"></div>
+        </div>
+        <div style="font-size:18px;font-weight:700;letter-spacing:-.02em">Smart Lidlar va Telegram Integratsiya</div>
+        <p style="margin:0;font-size:14px;line-height:1.6;color:#a9b6cd;text-wrap:pretty">AI suhbatni tahlil qilib, mijozlarni ‘Yangi’, ‘Qiziqqan’, ‘Hal bo‘lgan’ holatlariga ajratadi hamda tayyor lidlarni darhol Telegram sotuv kanaliga uzatadi.</p>
+      </div>
+      <div style="background:linear-gradient(180deg,rgba(30,41,59,.72),rgba(17,24,39,.6));border:1px solid rgba(148,163,184,.16);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:.25s" style-hover="border-color:rgba(139,155,255,.5);transform:translateY(-4px);box-shadow:0 30px 60px -34px rgba(99,102,241,.85)">
+        <div style="width:44px;height:44px;border-radius:13px;background:linear-gradient(140deg,#34d399,#0ea5e9);display:flex;align-items:center;justify-content:center"><div style="width:16px;height:16px;border-radius:5px;background:#fff"></div></div>
+        <div style="font-size:18px;font-weight:700;letter-spacing:-.02em">Administrator Boshqaruvi</div>
+        <p style="margin:0;font-size:14px;line-height:1.6;color:#a9b6cd;text-wrap:pretty">Zarur bo‘lganda AI suhbatini administrator bitta tugma orqali o‘z zimmasiga olishi va suhbatni davom ettirishi mumkin.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORKFLOW -->
+  <div id="imkoniyatlar" style="border-top:1px solid rgba(148,163,184,.14);border-bottom:1px solid rgba(148,163,184,.14);background:linear-gradient(180deg,rgba(23,32,54,.6),rgba(15,23,42,.2))">
+    <div style="box-sizing:border-box;max-width:1200px;margin:0 auto;padding:90px 24px;display:flex;flex-direction:column;gap:44px">
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between">
+        <div style="display:flex;flex-direction:column;gap:12px;max-width:640px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a5b4fc">Qanday ishlaydi?</div>
+          <h2 style="margin:0;font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.14">Uch qadamda — 10 daqiqada ishga tushadi</h2>
+        </div>
+        <a href="https://app.inboxcrm.uz" style="font-size:14px;font-weight:700;color:#fff;background:linear-gradient(120deg,#8b5cf6,#2f7ff0);padding:13px 22px;border-radius:11px" style-hover="filter:brightness(1.1)">Hozir ulash</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px">
+        <div style="position:relative;background:rgba(15,23,42,.55);border:1px solid rgba(148,163,184,.16);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:.25s" style-hover="border-color:rgba(139,155,255,.5)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:#0f172a;background:#c9d4ff;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center">01</div>
+          <div style="font-size:17px;font-weight:700;letter-spacing:-.02em">Instagram sahifani ulaysiz</div>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:#a9b6cd">Meta Graph API orqali biznes akkauntni bir marta ulaysiz — Direct va izohlar oqimi darhol tizimga tushadi.</p>
+        </div>
+        <div style="position:relative;background:rgba(15,23,42,.55);border:1px solid rgba(148,163,184,.16);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:.25s" style-hover="border-color:rgba(139,155,255,.5)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:#0f172a;background:#c9d4ff;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center">02</div>
+          <div style="font-size:17px;font-weight:700;letter-spacing:-.02em">AI agentga bilim berasiz</div>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:#a9b6cd">Biznesingiz haqida faktlar, narxlar, kurslar va jadvalni kiritasiz. AI faqat shu ma’lumotlar asosida javob beradi.</p>
+        </div>
+        <div style="position:relative;background:rgba(15,23,42,.55);border:1px solid rgba(148,163,184,.16);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:.25s" style-hover="border-color:rgba(139,155,255,.5)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:#0f172a;background:#c9d4ff;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center">03</div>
+          <div style="font-size:17px;font-weight:700;letter-spacing:-.02em">Hot lidlar Telegramga tushadi</div>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:#a9b6cd">AI Direct va izohlarga avtomatik javob berib, tayyor lidlarni Telegram sotuv guruhi yoki kanaliga yo‘naltiradi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div id="tariflar" style="box-sizing:border-box;max-width:1200px;margin:0 auto;padding:90px 24px;display:flex;flex-direction:column;gap:38px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;max-width:680px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a5b4fc">Tariflar</div>
+      <h2 style="margin:0;font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.14">Shaffof narxlar, yashirin to‘lovlarsiz</h2>
+      <p style="margin:0;font-size:16px;line-height:1.6;color:#a9b6cd">Har bir tarifda Instagram xabarlari, AI javoblari va Telegram webhook ulanishlari limiti aniq ko‘rsatilgan.</p>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:10px;background:rgba(148,163,184,.1);border:1px solid rgba(148,163,184,.18);padding:5px;border-radius:99px">
+      <div onClick="{{ setMonthly }}" style="{{ monthlyTabStyle }}">Oylik</div>
+      <div onClick="{{ setYearly }}" style="{{ yearlyTabStyle }}">Yillik · 2 oy bepul</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;width:100%;align-items:start">
+      <sc-for list="{{ plans }}" as="plan" hint-placeholder-count="3">
+        <div style="position:relative;background:linear-gradient(180deg,rgba(30,41,59,.72),rgba(17,24,39,.6));border:1px solid rgba(148,163,184,.16);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:18px;min-width:0;transition:.25s" style-hover="border-color:rgba(139,155,255,.45)">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="font-size:17px;font-weight:700;letter-spacing:-.02em">{{ plan.name }}</div>
+            <sc-if value="{{ plan.popular }}" hint-placeholder-val="{{ false }}">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#0f172a;background:#c9d4ff;padding:4px 8px;border-radius:6px">TOP</div>
+            </sc-if>
+          </div>
+          <p style="margin:0;font-size:13px;line-height:1.55;color:#a9b6cd;min-height:38px">{{ plan.tagline }}</p>
+          <div style="display:flex;align-items:baseline;gap:8px">
+            <div style="font-size:34px;font-weight:800;letter-spacing:-.035em;color:#eef3fa">{{ plan.price }}</div>
+            <div style="font-size:13px;color:#8fa0b8">so‘m / {{ periodLabel }}</div>
+          </div>
+          <a href="https://app.inboxcrm.uz" style="text-align:center;font-size:14px;font-weight:700;color:#fff;background:linear-gradient(120deg,#8b5cf6,#2f7ff0);padding:13px;border-radius:11px" style-hover="filter:brightness(1.1)">Boshlash</a>
+          <div style="height:1px;background:rgba(148,163,184,.16)"></div>
+          <div style="display:flex;flex-direction:column;gap:11px">
+            <sc-for list="{{ plan.features }}" as="f" hint-placeholder-count="4">
+              <div style="display:flex;gap:10px;align-items:flex-start">
+                <div style="width:6px;height:6px;flex:none;margin-top:7px;border-radius:99px;background:#8b9bff"></div>
+                <div style="font-size:13.5px;line-height:1.5;color:#c6d0e2">{{ f }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8fa0b8;text-align:center">Limitdan oshsa — tarifni istalgan vaqtda oshirasiz. Bekor qilish jarimasiz.</div>
+  </div>
+
+  <!-- CTA -->
+  <div style="box-sizing:border-box;max-width:1200px;margin:0 auto;padding:0 24px 90px">
+    <div style="position:relative;overflow:hidden;border:1px solid rgba(167,139,250,.3);border-radius:24px;padding:56px 32px;text-align:center;background:linear-gradient(130deg,rgba(124,92,246,.28),rgba(47,127,240,.18));display:flex;flex-direction:column;align-items:center;gap:18px">
+      <h2 style="margin:0;max-width:720px;font-size:clamp(24px,3.2vw,38px);font-weight:800;letter-spacing:-.03em;line-height:1.15">Bugun kelgan xabarlarning nechtasi javobsiz qoldi?</h2>
+      <p style="margin:0;max-width:600px;font-size:16px;line-height:1.6;color:#cbd5e1">InboxCRM ni bepul sinab ko‘ring — ulanish 10 daqiqa, birinchi lid bugun Telegramingizga tushadi.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+        <a href="https://app.inboxcrm.uz" style="font-size:15px;font-weight:700;color:#0f172a;background:#eef3fa;padding:15px 26px;border-radius:12px" style-hover="background:#fff">Tizimni bepul boshlash</a>
+        <a href="#aloqa" style="font-size:15px;font-weight:600;color:#eef3fa;border:1px solid rgba(232,238,251,.35);padding:15px 24px;border-radius:12px" style-hover="background:rgba(255,255,255,.1)">Savol berish</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div id="aloqa" style="border-top:1px solid rgba(148,163,184,.14);background:#0c1220">
+    <div style="box-sizing:border-box;max-width:1200px;margin:0 auto;padding:60px 24px 28px;display:flex;flex-direction:column;gap:40px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px">
+        <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+          <div style="display:flex;align-items:center;gap:11px">
+            <img src="logo/inboxcrm-mark.svg" alt="InboxCRM" style="height:30px;display:block">
+            <span style="font-size:18px;font-weight:800;letter-spacing:-.03em;color:#eef3fa">Inbox<span style="color:#8b9bff">CRM</span></span>
+          </div>
+          <p style="margin:0;font-size:13.5px;line-height:1.6;color:#9aa7bd;max-width:280px">Instagram Direct va izohlarni AI bilan avtomatlashtiruvchi lid boshqaruv tizimi.</p>
+          <a href="https://inboxcrm.uz" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#a5b4fc">inboxcrm.uz</a>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8ea0b8">Sahifalar</div>
+          <a href="#xizmatlar" style="font-size:14px;color:#c6d0e2">Xizmatlar</a>
+          <a href="#imkoniyatlar" style="font-size:14px;color:#c6d0e2">Imkoniyatlar</a>
+          <a href="#tariflar" style="font-size:14px;color:#c6d0e2">Tariflar</a>
+          <a href="https://app.inboxcrm.uz" style="font-size:14px;color:#c6d0e2">Kirish</a>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8ea0b8">Huquqiy</div>
+          <a href="/privacy" style="font-size:14px;color:#c6d0e2">Maxfiylik Siyosati (Privacy Policy)</a>
+          <a href="/terms" style="font-size:14px;color:#c6d0e2">Foydalanish Shartlari (Terms of Service)</a>
+          <a href="mailto:support@inboxcrm.uz" style="font-size:14px;color:#c6d0e2">support@inboxcrm.uz</a>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8ea0b8">Rasmiy ma’lumotlar</div>
+          <div style="font-size:13.5px;line-height:1.6;color:#c6d0e2">ABDULLAYEV RAXMATJON SHARIFJON O‘G‘LI</div>
+          <div style="font-size:13.5px;line-height:1.6;color:#9aa7bd">JSHSHIR / STIR: <span style="font-family:'IBM Plex Mono',monospace;color:#c6d0e2">52912045920016</span></div>
+          <div style="font-size:13.5px;line-height:1.6;color:#9aa7bd">Namangan viloyati, To‘raqo‘rg‘on tumani, O‘zbekiston</div>
+          <div style="font-size:13.5px;line-height:1.6;color:#9aa7bd">Qo‘llab-quvvatlash: <a href="mailto:support@inboxcrm.uz" style="color:#a5b4fc">support@inboxcrm.uz</a></div>
+        </div>
+      </div>
+
+      <div style="height:1px;background:rgba(148,163,184,.14)"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center">
+        <div style="font-size:13px;color:#8ea0b8">© 2026 InboxCRM. Barcha huquqlar himoyalangan.</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8ea0b8">Meta Graph API · Telegram Bot API</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultYearly&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Tariflar&quot;}}">
+class Component extends DCLogic {
+  state = { yearly: false };
+
+  componentDidMount() {
+    if (this.props.defaultYearly) this.setState({ yearly: true });
+  }
+
+  fmt(n) { return n.toLocaleString('ru-RU').replace(/\u00a0/g, ' '); }
+
+  renderVals() {
+    const yearly = this.state.yearly;
+    const per = yearly ? 10 : 1;
+    const base = [
+      { name: 'Start', m: 149000, popular: false, tagline: 'Yangi boshlagan sahifalar va kichik xizmat bizneslari uchun.', features: ['1 Instagram biznes akkaunt', '1 500 Instagram xabari / oy', '1 000 AI javob / oy', '1 Telegram webhook ulanishi', 'Direct + izohlar bitta oynada', 'Email qo‘llab-quvvatlash'] },
+      { name: 'Pro', m: 349000, popular: true, tagline: 'O‘quv markazlari va faol reklama qiladigan bizneslar uchun.', features: ['1 Instagram biznes akkaunt', '10 000 Instagram xabari / oy', '8 000 AI javob / oy', '3 Telegram webhook ulanishi', 'Smart lid holatlari va tahlil', 'Admin qo‘lga olish rejimi', 'Ustuvor qo‘llab-quvvatlash'] },
+      { name: 'Business', m: 749000, popular: false, tagline: 'Katta oqim va ko‘p operatorli sotuv bo‘limlari uchun.', features: ['1 Instagram biznes akkaunt', 'Cheksiz Instagram xabari', '40 000 AI javob / oy', '10 Telegram webhook ulanishi', 'Rollar va ko‘p operator', 'API va maxsus integratsiya', 'Shaxsiy menejer'] }
+    ];
+    const tab = (on) => on
+      ? 'cursor:pointer;font-size:13.5px;font-weight:700;color:#0f172a;background:#eef3fa;padding:9px 18px;border-radius:99px;white-space:nowrap;transition:.2s'
+      : 'cursor:pointer;font-size:13.5px;font-weight:600;color:#b6c2d6;padding:9px 18px;border-radius:99px;white-space:nowrap;transition:.2s';
+    return {
+      plans: base.map(p => ({ ...p, price: this.fmt(p.m * per) })),
+      periodLabel: yearly ? 'yil' : 'oy',
+      monthlyTabStyle: tab(!yearly),
+      yearlyTabStyle: tab(yearly),
+      setMonthly: () => this.setState({ yearly: false }),
+      setYearly: () => this.setState({ yearly: true })
+    };
+  }
+}
+</script>
+</body>
+</html>

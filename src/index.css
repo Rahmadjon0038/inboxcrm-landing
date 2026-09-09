@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', Helvetica, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #0f172a;
+}
+
+@keyframes ic-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes ic-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-ic-pulse {
+  animation: ic-pulse 1.8s ease-in-out infinite;
+}
+
+.animate-ic-float {
+  animation: ic-float 4.5s ease-in-out infinite;
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, #c4b5fd, #8b9bff 45%, #5eb0ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
