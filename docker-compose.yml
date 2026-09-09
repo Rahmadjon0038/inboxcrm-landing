@@ -1,0 +1,7 @@
+services:
+  frontend:
+    build: .
+    container_name: mycompanysite-frontend
+    restart: unless-stopped
+    ports:
+      - "3600:80"
