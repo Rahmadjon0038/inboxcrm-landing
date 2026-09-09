@@ -9,7 +9,7 @@ const TOC_ITEMS = [
   { href: '#legal-basis', label: '6. Legal Basis for Processing' },
   { href: '#security', label: '7. Storage, Security and Retention' },
   { href: '#rights', label: '8. Your Rights and Choices' },
-  { href: '#deletion', label: '9. Data Deletion' },
+  { href: '#data-deletion', label: '9. Data Deletion Instructions' },
   { href: '#children', label: "10. Children's Privacy" },
   { href: '#transfers', label: '11. International Data Transfers' },
   { href: '#cookies', label: '12. Cookies and Local Storage' },
@@ -193,24 +193,34 @@ export default function Privacy() {
         </p>
       </Section>
 
-      <Section id="deletion" title="9. Data Deletion">
+      <Section id="data-deletion" title="9. Data Deletion Instructions">
+        <div className="bg-slate-800/40 border border-violet-400/30 rounded-2xl p-5">
+          <p className="m-0">
+            To delete your data, simply send a request to{' '}
+            <a
+              href="mailto:abdullayevrahmadjon821@gmail.com"
+              className="text-[#a5b4fc] hover:text-[#c7d2fe]"
+            >
+              abdullayevrahmadjon821@gmail.com
+            </a>{' '}
+            from the email address associated with your account, or remove
+            the InboxCRM app directly from your Facebook / Instagram
+            settings under{' '}
+            <span className="text-[#eef3fa] font-medium">
+              Settings → Apps and Websites → Remove
+            </span>
+            .
+          </p>
+        </div>
         <p>
-          You may request deletion of your data at any time by emailing{' '}
-          <a
-            href="mailto:abdullayevrahmadjon821@gmail.com"
-            className="text-[#a5b4fc] hover:text-[#c7d2fe]"
-          >
-            abdullayevrahmadjon821@gmail.com
-          </a>{' '}
-          from the email address associated with your account. Upon a
-          verified request, we will delete all messages, contact records,
-          business configuration, and access tokens associated with your
-          account within 30 days, except where we are required to retain
-          certain records to comply with legal obligations. Disconnecting
-          the app from within Instagram (Settings → Apps and Websites →
-          Remove) immediately revokes the Service's access to your Instagram
-          account and stops any further data collection, independently of a
-          deletion request.
+          Upon a verified request, we will delete all messages, contact
+          records, business configuration, and access tokens associated with
+          your account within 30 days, except where we are required to
+          retain certain records to comply with legal obligations.
+          Disconnecting the app from within Instagram (Settings → Apps and
+          Websites → Remove) immediately revokes the Service's access to
+          your Instagram account and stops any further data collection,
+          independently of a deletion request.
         </p>
       </Section>
 

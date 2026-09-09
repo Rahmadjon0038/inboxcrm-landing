@@ -38,6 +38,7 @@ function Page() {
       <HeroDashboard ui={ui} />
       <Features ui={ui} content={content} />
       <Workflow ui={ui} content={content} />
+      <Founder ui={ui} />
       <Pricing ui={ui} content={content} onOpenLead={openLead} />
       <Footer ui={ui} />
       <LeadModal
@@ -608,6 +609,76 @@ function Workflow({ ui, content }) {
               description={w.description}
             />
           ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Founder({ ui }) {
+  const f = ui.founder
+  if (!f) return null
+  return (
+    <div className="max-w-6xl mx-auto px-6 py-22">
+      <div className="flex flex-col gap-3.5 max-w-3xl mb-10">
+        <SectionEyebrow>{f.eyebrow}</SectionEyebrow>
+        <h2 className="m-0 text-[clamp(26px,3.4vw,40px)] font-extrabold tracking-tight leading-[1.14]">
+          {f.heading}
+        </h2>
+      </div>
+
+      <div className="grid gap-8 items-start" style={{ gridTemplateColumns: 'minmax(220px, 280px) 1fr' }}>
+        <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
+          <div className="w-28 h-28 shrink-0 rounded-3xl bg-gradient-to-br from-violet-500 via-indigo-500 to-blue-500 flex items-center justify-center text-3xl font-extrabold text-white shadow-[0_30px_60px_-30px_rgba(99,102,241,0.9)]">
+            {f.initials}
+          </div>
+          <div>
+            <div className="text-lg font-bold tracking-tight text-[#eef3fa]">
+              {f.name}
+            </div>
+            <div className="text-sm text-[#a9b6cd] mt-0.5">{f.role}</div>
+          </div>
+          <a
+            href={`mailto:${f.email}`}
+            className="text-sm font-semibold text-[#d7e0f0] border border-slate-400/28 px-4 py-2.5 rounded-[10px] hover:bg-slate-400/12 hover:text-white transition-colors"
+          >
+            {f.cta}
+          </a>
+        </div>
+
+        <div className="bg-gradient-to-b from-slate-800/72 to-gray-900/60 border border-slate-400/16 rounded-[20px] p-7 md:p-8 flex flex-col gap-6 min-w-0">
+          <div className="flex flex-col gap-4">
+            {f.bio.map((p, i) => (
+              <p
+                key={i}
+                className="m-0 text-[15px] leading-relaxed text-[#c6d0e2]"
+              >
+                {p}
+              </p>
+            ))}
+          </div>
+
+          <blockquote className="m-0 border-l-2 border-violet-400/50 pl-4 text-base leading-relaxed text-[#eef3fa] italic">
+            “{f.quote}”
+          </blockquote>
+
+          {f.stats && (
+            <div className="grid grid-cols-3 gap-3 pt-2">
+              {f.stats.map((s) => (
+                <div
+                  key={s.label}
+                  className="text-center bg-slate-400/10 rounded-[12px] py-3 px-2"
+                >
+                  <div className="text-lg font-extrabold text-[#eef3fa]">
+                    {s.n}
+                  </div>
+                  <div className="text-[11px] text-[#8fa0b8] mt-0.5">
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

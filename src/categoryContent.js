@@ -168,6 +168,26 @@ export const UI = {
       rights: '© 2026 InboxCRM. All rights reserved.',
       stack: 'Meta Graph API · Telegram Bot API',
     },
+    founder: {
+      eyebrow: 'Founder',
+      heading: 'Built by someone who has felt the problem firsthand',
+      name: 'Rakhmatjon Abdullayev',
+      role: 'Founder & CEO, InboxCRM',
+      initials: 'RA',
+      bio: [
+        "I started InboxCRM after watching business owners in Namangan lose real customers simply because nobody had time to answer every single Instagram message and comment fast enough.",
+        "Today InboxCRM helps educational centers, shops, and growing businesses across Uzbekistan turn their Instagram page into a real sales channel — with AI that never sleeps and a team that always stays in control.",
+      ],
+      quote:
+        'Every unanswered message is a lost customer. Our job is to make sure that never happens again.',
+      stats: [
+        { n: '2026', label: 'Founded' },
+        { n: '3+', label: 'Business types served' },
+        { n: '24/7', label: 'AI uptime' },
+      ],
+      cta: 'Get in touch',
+      email: 'abdullayevrahmadjon821@gmail.com',
+    },
   },
   uz: {
     nav: {
@@ -324,6 +344,26 @@ export const UI = {
       supportLabel: "Qo'llab-quvvatlash",
       rights: '© 2026 InboxCRM. Barcha huquqlar himoyalangan.',
       stack: 'Meta Graph API · Telegram Bot API',
+    },
+    founder: {
+      eyebrow: 'Asoschi',
+      heading: "Muammoni o'z ko'zi bilan ko'rgan inson tomonidan yaratilgan",
+      name: 'Raxmatjon Abdullayev',
+      role: 'InboxCRM asoschisi va CEO',
+      initials: 'RA',
+      bio: [
+        "InboxCRM'ni men Namangandagi tadbirkorlarning Instagramga kelayotgan ko'plab xabar va izohlarga ulgurmasdan javob berolmay, shu sababli haqiqiy mijozlarni yo'qotayotganini ko'rib boshladim.",
+        "Bugungi kunda InboxCRM O'zbekiston bo'ylab o'quv markazlari, do'konlar va o'sib borayotgan bizneslarga Instagram sahifasini haqiqiy sotuv kanaliga aylantirishga yordam beradi — hech qachon charchamaydigan AI va nazoratni har doim qo'lida ushlab turadigan jamoa bilan.",
+      ],
+      quote:
+        "Har bir javobsiz qolgan xabar — yo'qotilgan mijoz. Bizning vazifamiz — bunday holat boshqa hech qachon takrorlanmasligini ta'minlash.",
+      stats: [
+        { n: '2026', label: 'Asos solingan' },
+        { n: '3+', label: 'Xizmat ko\'rsatiladigan soha' },
+        { n: '24/7', label: 'AI ish vaqti' },
+      ],
+      cta: "Bog'lanish",
+      email: 'abdullayevrahmadjon821@gmail.com',
     },
   },
 }
