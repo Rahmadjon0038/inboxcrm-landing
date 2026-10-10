@@ -69,9 +69,35 @@ export function LegalLayout({ title, effectiveDate, intro, children }) {
         <p className="font-mono text-xs text-[#8fa0b8] mb-6">
           Effective date: {effectiveDate}
         </p>
-        <p className="text-[15px] leading-relaxed text-[#a9b6cd] mb-10">
+        <p className="text-[15px] leading-relaxed text-[#a9b6cd] mb-6">
           {intro}
         </p>
+        <div className="bg-slate-800/40 border border-slate-400/16 rounded-2xl p-5 mb-10 text-[14px] leading-relaxed text-[#a9b6cd]">
+          <div className="font-mono text-[11px] tracking-widest uppercase text-indigo-300 mb-2">
+            Operator
+          </div>
+          <div className="text-[#eef3fa] font-semibold">
+            "ANIMALL VET GROUP" LIMITED LIABILITY COMPANY (MChJ)
+          </div>
+          <div>TIN (STIR): 312 473 663</div>
+          <div>
+            State registration: October 2, 2025 · No. 2962704 (Izboskan
+            District State Services Center, Andijan region)
+          </div>
+          <div>
+            Address: Andijan region, Izboskan district, Istiqlol MFY, Ozodlik
+            street, 5, Uzbekistan
+          </div>
+          <div>
+            Contact:{' '}
+            <a
+              href="mailto:info@animall.uz"
+              className="text-[#a5b4fc] hover:text-[#c7d2fe]"
+            >
+              info@animall.uz
+            </a>
+          </div>
+        </div>
         {children}
       </div>
     </div>

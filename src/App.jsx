@@ -38,7 +38,6 @@ function Page() {
       <HeroDashboard ui={ui} />
       <Features ui={ui} content={content} />
       <Workflow ui={ui} content={content} />
-      <Founder ui={ui} />
       <Pricing ui={ui} content={content} onOpenLead={openLead} />
       <Footer ui={ui} />
       <LeadModal
@@ -105,12 +104,6 @@ function Nav({ ui, onOpenLead }) {
         </div>
         <div className="flex items-center gap-2.5 ml-3">
           <LanguageSwitch />
-          <a
-            href="https://app.inboxcrm.uz"
-            className="text-sm font-semibold text-[#d7e0f0] border border-slate-400/28 px-4 py-2.5 rounded-[10px] hover:bg-slate-400/12 hover:text-white transition-colors"
-          >
-            {ui.nav.kirish}
-          </a>
           <button
             type="button"
             onClick={() => onOpenLead()}
@@ -615,84 +608,16 @@ function Workflow({ ui, content }) {
   )
 }
 
-function Founder({ ui }) {
-  const f = ui.founder
-  if (!f) return null
-  return (
-    <div className="max-w-6xl mx-auto px-6 py-22">
-      <div className="flex flex-col gap-3.5 max-w-3xl mb-10">
-        <SectionEyebrow>{f.eyebrow}</SectionEyebrow>
-        <h2 className="m-0 text-[clamp(26px,3.4vw,40px)] font-extrabold tracking-tight leading-[1.14]">
-          {f.heading}
-        </h2>
-      </div>
-
-      <div className="grid gap-8 items-start" style={{ gridTemplateColumns: 'minmax(220px, 280px) 1fr' }}>
-        <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
-          <div className="w-28 h-28 shrink-0 rounded-3xl bg-gradient-to-br from-violet-500 via-indigo-500 to-blue-500 flex items-center justify-center text-3xl font-extrabold text-white shadow-[0_30px_60px_-30px_rgba(99,102,241,0.9)]">
-            {f.initials}
-          </div>
-          <div>
-            <div className="text-lg font-bold tracking-tight text-[#eef3fa]">
-              {f.name}
-            </div>
-            <div className="text-sm text-[#a9b6cd] mt-0.5">{f.role}</div>
-          </div>
-          <a
-            href={`mailto:${f.email}`}
-            className="text-sm font-semibold text-[#d7e0f0] border border-slate-400/28 px-4 py-2.5 rounded-[10px] hover:bg-slate-400/12 hover:text-white transition-colors"
-          >
-            {f.cta}
-          </a>
-        </div>
-
-        <div className="bg-gradient-to-b from-slate-800/72 to-gray-900/60 border border-slate-400/16 rounded-[20px] p-7 md:p-8 flex flex-col gap-6 min-w-0">
-          <div className="flex flex-col gap-4">
-            {f.bio.map((p, i) => (
-              <p
-                key={i}
-                className="m-0 text-[15px] leading-relaxed text-[#c6d0e2]"
-              >
-                {p}
-              </p>
-            ))}
-          </div>
-
-          <blockquote className="m-0 border-l-2 border-violet-400/50 pl-4 text-base leading-relaxed text-[#eef3fa] italic">
-            “{f.quote}”
-          </blockquote>
-
-          {f.stats && (
-            <div className="grid grid-cols-3 gap-3 pt-2">
-              {f.stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="text-center bg-slate-400/10 rounded-[12px] py-3 px-2"
-                >
-                  <div className="text-lg font-extrabold text-[#eef3fa]">
-                    {s.n}
-                  </div>
-                  <div className="text-[11px] text-[#8fa0b8] mt-0.5">
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  )
-}
-
 function fmt(n) {
   return n.toLocaleString('ru-RU').replace(/ /g, ' ')
 }
 
 function Pricing({ ui, content, onOpenLead }) {
-  const plans = content.plans.map((p) =>
-    content.periodToggle ? { ...p, price: fmt(p.m) } : p
-  )
+  const plans = content.plans.map((p) => ({
+    ...p,
+    price: p.priceText ?? fmt(p.m),
+    perMonth: p.m != null,
+  }))
 
   return (
     <div
@@ -705,24 +630,11 @@ function Pricing({ ui, content, onOpenLead }) {
         </h2>
       </div>
 
-      <div
-        className={
-          plans.length === 1
-            ? 'flex justify-center w-full'
-            : 'grid gap-4.5 w-full items-start'
-        }
-        style={
-          plans.length === 1
-            ? undefined
-            : { gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))' }
-        }
-      >
+      <div className="flex flex-wrap justify-center gap-4.5 w-full items-start">
         {plans.map((plan) => (
           <div
             key={plan.name}
-            className={`relative bg-gradient-to-b from-slate-800/72 to-gray-900/60 border border-slate-400/16 rounded-[20px] p-7 flex flex-col gap-4.5 min-w-0 transition-colors hover:border-indigo-300/45 ${
-              plans.length === 1 ? 'w-full max-w-md' : ''
-            }`}
+            className="relative bg-gradient-to-b from-slate-800/72 to-gray-900/60 border border-slate-400/16 rounded-[20px] p-7 flex flex-col gap-4.5 min-w-0 w-[340px] max-w-full transition-colors hover:border-indigo-300/45"
           >
             <div className="flex items-center gap-2.5">
               <div className="text-[17px] font-bold tracking-tight">
@@ -739,9 +651,9 @@ function Pricing({ ui, content, onOpenLead }) {
             </p>
             <div className="flex items-baseline gap-2">
               <div className="text-[34px] font-extrabold tracking-tight text-[#eef3fa]">
-                {content.periodToggle ? plan.price : plan.priceText}
+                {plan.price}
               </div>
-              {content.periodToggle && (
+              {plan.perMonth && (
                 <div className="text-[13px] text-[#8fa0b8]">
                   {ui.pricing.currency} / {ui.pricing.periodMonth}
                 </div>
@@ -749,7 +661,7 @@ function Pricing({ ui, content, onOpenLead }) {
             </div>
             {plan.buttonText ? (
               <a
-                href="mailto:abdullayevrahmadjon821@gmail.com"
+                href="mailto:info@animall.uz"
                 className="text-center text-sm font-bold text-white bg-gradient-to-r from-violet-500 to-blue-500 py-3.25 rounded-[11px] hover:brightness-110 transition-all"
               >
                 {plan.buttonText}
@@ -822,7 +734,7 @@ function LeadModal({ ui, open, onClose, plans = [], initialPlan = '' }) {
     }
     setStatus('submitting')
     try {
-      const res = await fetch('https://api.inboxcrm.uz/api/v1/leads', {
+      const res = await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -1006,9 +918,6 @@ function Footer({ ui }) {
             <a href="#tariflar" className="text-sm text-[#c6d0e2]">
               {ui.nav.tariflar}
             </a>
-            <a href="https://app.inboxcrm.uz" className="text-sm text-[#c6d0e2]">
-              {f.login}
-            </a>
           </FooterColumn>
 
           <FooterColumn heading={f.legal}>
@@ -1018,8 +927,8 @@ function Footer({ ui }) {
             <Link to="/terms" className="text-sm text-[#c6d0e2] hover:text-white">
               {f.terms}
             </Link>
-            <a href="mailto:abdullayevrahmadjon821@gmail.com" className="text-sm text-[#c6d0e2]">
-              abdullayevrahmadjon821@gmail.com
+            <a href="mailto:info@animall.uz" className="text-sm text-[#c6d0e2]">
+              info@animall.uz
             </a>
           </FooterColumn>
 
@@ -1028,12 +937,19 @@ function Footer({ ui }) {
               {f.fullName}
             </div>
             <div className="text-[13.5px] leading-relaxed text-[#9aa7bd]">
+              {f.tinLabel}:{' '}
+              <span className="font-mono text-[#c6d0e2]">{f.tinValue}</span>
+            </div>
+            <div className="text-[13.5px] leading-relaxed text-[#9aa7bd]">
+              {f.registeredLabel}: {f.registeredValue}
+            </div>
+            <div className="text-[13.5px] leading-relaxed text-[#9aa7bd]">
               {f.address}
             </div>
             <div className="text-[13.5px] leading-relaxed text-[#9aa7bd]">
               {f.supportLabel}:{' '}
-              <a href="mailto:abdullayevrahmadjon821@gmail.com" className="text-indigo-300">
-                abdullayevrahmadjon821@gmail.com
+              <a href="mailto:info@animall.uz" className="text-indigo-300">
+                info@animall.uz
               </a>
             </div>
           </FooterColumn>

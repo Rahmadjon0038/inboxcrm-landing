@@ -198,10 +198,10 @@ export default function Privacy() {
           <p className="m-0">
             To delete your data, simply send a request to{' '}
             <a
-              href="mailto:abdullayevrahmadjon821@gmail.com"
+              href="mailto:info@animall.uz"
               className="text-[#a5b4fc] hover:text-[#c7d2fe]"
             >
-              abdullayevrahmadjon821@gmail.com
+              info@animall.uz
             </a>{' '}
             from the email address associated with your account, or remove
             the InboxCRM app directly from your Facebook / Instagram
@@ -269,10 +269,10 @@ export default function Privacy() {
           Questions about this Policy, or requests regarding your data, can
           be sent to{' '}
           <a
-            href="mailto:abdullayevrahmadjon821@gmail.com"
+            href="mailto:info@animall.uz"
             className="text-[#a5b4fc] hover:text-[#c7d2fe]"
           >
-            abdullayevrahmadjon821@gmail.com
+            info@animall.uz
           </a>
           .
         </p>

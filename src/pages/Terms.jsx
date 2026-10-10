@@ -60,10 +60,10 @@ export default function Terms() {
           all activity that occurs under your account. Notify us
           immediately at{' '}
           <a
-            href="mailto:abdullayevrahmadjon821@gmail.com"
+            href="mailto:info@animall.uz"
             className="text-[#a5b4fc] hover:text-[#c7d2fe]"
           >
-            abdullayevrahmadjon821@gmail.com
+            info@animall.uz
           </a>{' '}
           if you suspect unauthorized use of your account.
         </p>
@@ -236,10 +236,10 @@ export default function Terms() {
         <p>
           Questions about these Terms can be sent to{' '}
           <a
-            href="mailto:abdullayevrahmadjon821@gmail.com"
+            href="mailto:info@animall.uz"
             className="text-[#a5b4fc] hover:text-[#c7d2fe]"
           >
-            abdullayevrahmadjon821@gmail.com
+            info@animall.uz
           </a>
           .
         </p>

@@ -3,5 +3,18 @@ services:
     build: .
     container_name: mycompanysite-frontend
     restart: unless-stopped
+    depends_on:
+      - lead-api
     ports:
       - "3600:80"
+
+  lead-api:
+    image: node:20-alpine
+    container_name: mycompanysite-lead-api
+    restart: unless-stopped
+    working_dir: /app
+    command: ["node", "lead-server.mjs"]
+    volumes:
+      - ./server:/app:ro
+    env_file:
+      - .env
